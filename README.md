@@ -1,124 +1,59 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/-Y2kMcNg)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=17516448&assignment_repo_type=AssignmentRepo)
-# Milestones 1
+# Analisis Persebaran Gempa Bumi di Indonesia
 
-_Milestones 1 ini dibuat guna mengevaluasi pembelajaran pada Hacktiv8 Data Science Fulltime Program khususnya pada Phase 0._
+## Justifikasi
+Indonesia merupakan salah satu negara dengan aktivitas seismik tertinggi di dunia karena berada di Cincin Api Pasifik. Rata-rata, terjadi 22 gempa setiap hari di berbagai wilayah Indonesia. Analisis data gempa menjadi penting untuk memahami pola kejadian gempa dan mendukung upaya mitigasi bencana.
 
----
+## Latar Belakang Masalah
+Gempa bumi adalah fenomena alam yang sulit diprediksi, tetapi pola sebaran dan karakteristiknya dapat dianalisis melalui data historis. Dalam proyek ini, data gempa di Indonesia dianalisis untuk menjawab beberapa pertanyaan kunci terkait pola kejadian gempa dan faktor yang mempengaruhinya.
 
-## Assignment Problems
+## Output Proyek
+Proyek ini bertujuan untuk menjawab pertanyaan berikut:
+1. **Apakah ada hubungan antara area dan kategori gempa?**
+2. **Apakah ada anomali dari sebaran data magnitudo gempa?**
+3. **Di mana saja area yang memiliki rekaman gempa berkategori besar terbanyak?**
+4. **Bagaimana kedalaman pusat gempa mempengaruhi magnitudo gempa?**
+5. **Apakah gempa terjadi pada jam tertentu?**
+6. **Apakah gempa dengan kategori besar bisa diprediksi atau memiliki pola?**
 
-Anda adalah seorang Data Analyst yang akan mengerjakan projek besar untuk menyelesaikan suatu permasalahan client. Client Anda membutuhkan hasil analisa data yang menggunakan statistik dan dashboard visualisasi untuk membantu mereka menyelesaikan masalahnya.
+## Data
+### Sumber Dataset
+- Dataset diambil dari [Kaggle - Earthquakes in Indonesia](https://www.kaggle.com/datasets/kekavigi/earthquakes-in-indonesia)
+- Visualisasi tambahan tersedia di [Tableau Dashboard](https://public.tableau.com/app/profile/jabaris.maulana/viz/h8dsft_Milestone1_alan/PERSEBARANDATAGEMPA?publish=yes)
 
----
+### Deskripsi Kolom Dataset
+Dataset ini terdiri dari beberapa kolom utama:
+1. **Tanggal**: Waktu kejadian gempa.
+2. **Lokasi**: Titik koordinat (lintang dan bujur) serta nama wilayah.
+3. **Magnitudo**: Kekuatan gempa dalam skala Richter.
+4. **Kedalaman**: Kedalaman pusat gempa dalam kilometer.
+5. **Kategori**: Klasifikasi gempa berdasarkan magnitudo (kecil, sedang, besar).
 
-## Assignment Instructions
-### General Instructions
-1. Pilihlah satu topik **bebas** dan buatlah **problem statement** terlebih dahulu menggunakan metode SMART.
+### Contoh Penggunaan
+Dengan dataset ini, kita dapat mengidentifikasi wilayah dengan aktivitas seismik tinggi, mengamati pola kejadian gempa, serta mengeksplorasi hubungan antara magnitudo dan kedalaman.
 
-2. Dataset dibebaskan dari sumber manapun (BigQuery, Kaggle, BPS, dll.) dan berformat apapun (csv, excel, json, sql query, dll.) **NOTE:** Wajib mencantumkan sumber referensi data pada bagian `Data Loading`.
+## Metode
+Metode yang digunakan dalam proyek ini meliputi:
+- **Eksplorasi Data**: Analisis statistik dan visualisasi distribusi magnitudo, lokasi, dan kedalaman gempa.
+- **Statistik Deskriptif**: Identifikasi pola umum dalam data.
 
-3. **Konsultasikan terlebih dahulu dataset yang hendak digunakan ke buddy masing-masing student. Jika disetujui, maka silakan dikerjakan. Jika tidak disetujui, maka cari dataset yang lain dan konsultasikan lagi mengenai dataset yang baru ini.**
+## Teknologi yang Digunakan
+### Manipulasi dan Analisis Data
+- pandas - Manipulasi data
+- numpy - Perhitungan numerik
 
-4. Saat melakukan konsultasi mengenai dataset yang akan dikerjakan dengan buddy, sertakan :
-   - URL dataset yang hendak dipakai.
-   - Latar belakang.
-   - Tujuan yang hendak dicapai dengan adanya report ini. Spesifikkan mengenai problem yang Anda angkat.
-   - User/client yang akan membaca report ini.
+### Visualisasi Data
+- matplotlib - Pembuatan grafik
+- seaborn - Visualisasi statistik
+- tableau - Peta interaktif
 
-5. Sebelum menentukan tabel, kolom, atau hal lain dalam dataset yang akan dijadikan analisis dan visualisasi data, lakukan identifikasi dan penjabaran masalah terlebih dahulu agar dapat memudahkan Anda dalam melakukan analisis. Anda dapat menggunakan metode apapun seperti analisis SWOT, Fish bone diagram, 5W+1H, dsb. **Contoh:**
-   - Problem Statement: `Mengetahui Preferensi dan Perilaku Konsumsi Makanan di Area Urban di Indonesia dalam kurun waktu tahun 2021`
-   - Penjabaran masalah dengan metode 5W+1H:
-     + Kota mana dengan rata-rata % pengeluaran makan paling besar?
-     + Bagaimana perilaku pemilihan makanan berdasarkan harga terhadap social class masyarakat?
-     + Apakah tingkat pendidikan sarjana memiliki preferensi memilih makanan-makanan yang sehat?
-     + Apakah warga DKI Jakarta masih mengonsumsi makanan tradisional?
-     + Usia berapa saja yang masih mengonsumsi makanan tradisional?
-     + dsb.
-   - Pertanyaan-pertanyaan/penjabaran masalah diatas dapat dijawab dengan data visualisasi dan analisis statistik.
+## Target Pengguna
+- **BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)**: Untuk pemantauan dan peringatan dini.
+- **Pemerintah dan Lembaga Kebencanaan**: Untuk mitigasi dan perencanaan kebencanaan.
+- **Akademisi dan Peneliti**: Untuk studi seismologi dan geofisika.
+- **Masyarakat Umum**: Untuk meningkatkan kesadaran dan kesiapsiagaan terhadap gempa.
 
-6. Setelah melakukan identifikasi dan penjabaran masalah, tentukan metrik/data apa saja yang diperlukan lalu tarik data yang diperlukan dari dataset yang sudah ditentukan menggunakan SQL. `Cantumkan semua query yang dibuat untuk menarik semua data yang diperlukan dalam milestone ini`.
-
-7. **Perlu diperhatikan** bahwa penjabaran masalah yang akan dijawab menggunakan data visualisasi dan analisis statistik **HARUS** mengikuti kriteria berikut:
-   - Minimal terdapat `6 penjabaran` masalah dimana 4 penjabaran untuk `visualisasi data`, 1 penjabaran untuk `statistik deskriptif`, dan 1 penjabaran untuk `statistik inferensial`.
-
-8. Untuk `Data Visualisasi` dibebaskan menggunakan tipe visualisasi (batang, garis, dsb) dan library (matplotlib, pyplot, seaborn, dsb) apapun, disesuaikan dengan penjabaran masalahnya. `Minimal 4 visualisasi sesuai dengan jumlah minimum penjabaran untuk bagian visualisasi data`. **WAJIB** memberikan insight di tiap visualisasi data.
-
-9. Untuk `Statistik Deskriptif`, pilihlah minimal salah satu perhitungan/analisis statistik deskriptif seperti *central tendency*, *measure of variance*, *outlier analysis*, *distribution*, dsb. `Sesuaikan dengan penjabaran masalah yang ditentukan`.
-
-10. Untuk `Statistik Inferensial`, pilihlah minimal salah satu perhitungan/analisis statistik inferensial seperti *confidence interval*, *statistical significance*, *statistical testing*, *hypothesis testing: one sample, two sample independent, paired test, ANOVA, chi-square*, dsb. `Sesuaikan dengan penjabaran masalah yang ditentukan`.
-
-11. Output dari Milestone ini adalah dashboard data visualisasi menggunakan `Tableau Public` dan analisis serta pengolahan data di `jupyter notebook`.
-
-### Notebook Instructions
-1. Lakukan data cleaning dan preprocessing pada notebook
-
-2. Notebook harus mengikuti format berikut:
-   1. Perkenalan
-      > Bab pengenalan harus diisi dengan identitas.
-
-   2. Identifikasi Masalah
-      > Bab ini harus menyantumkan **topik permasalahan**, **problem statement**, **latar belakang**, serta **penjabaran masalah** yang ingin dianalisis menggunakan metode statistik dan data visualisasi.
-
-   3. Data Loading 
-      > Bagian ini berisi proses *data loading* dan eksplorasi data sederhana. Cantumkan query SQL masing-masing data yang di-load jika menggunakan dari BigQuery atau server SQL lainnya. Tampilkan juga datanya.
-
-   4. Data Cleaning
-      > Bagian ini berisi proses penyiapan data berupa data cleaning sebelum dilakukan *explorasi data* lebih lanjut. Proses cleaning dapat berupa memberi nama baru untuk setiap kolom, mengisi missing values, menghapus kolom yang tidak dipakai, dan lain sebagainya.
-
-   5. Analisis dan perhitungan
-      > Bagian ini berisi proses analisis, penjelasan, perhitungan statistik deskriptif, inferensial, serta pembuatan visualisasi data. Untuk visualisasi data wajib memberikan insight di tiap visualisasinya.
-
-   6. Pengambilan Kesimpulan
-      > Pada bab terakhir ini, **harus berisi** kesimpulan yang mencerminkan solusi/rekomendasi/jawaban atas permasalahan yang diangkat serta menarik benang merah dari seluruh analisis dan perhitungan secara singkat, jelas, dan padat.
-
-3. Simpan notebook dengan format `h8dsft_Milestone1_<nama-student>.ipynb`, misal `h8dsft_Milestone1_raka_ardhi.ipynb`.
-
-### Dashboard Instructions
-
-1. Dashboard dibuat menggunakan `Tableau`.
-
-2. Dashboard yang dibuat terdiri dari 2 bagian : `Visualisasi` dan `Statistical Analysis` yang dapat dibuat dalam 1 halaman atau multi halaman.
-
-3. Untuk bagian Visualisasi :
-   - Minimal ada 4 figure/visualisasi data yang ditampilkan dalam halaman `Visualisasi` yang sesuai dengan yang dibuat pada Notebook.
-   - Minimal ada 1 interactivity pada dashboard.
-   - Tidak perlu menulis insightnya, dashboard visualisasi sejatinya hanya kumpulan visualisasi data.
-   - Apabila jenis plot pada dashboard dengan di Python berbeda, dari segi jenis dan hasil, tidak masalah jika lampirkan plot dari dashboard ke notebook dan tetap tampilkan data yang sudah dipreprocess pada notebook.
-
-4. Untuk bagian Statistical Analysis:
-   - Tulis proses analisis statistik deskriptif dan inferential yang dilakukan di notebook dari masalah yang diangkat hingga kesimpulan dari hasil analisis statistik.
-
-5. Presentasikan dashboard yang telah dibuat pada P1W1D4AM.
+## Kesimpulan
+(Hasil analisis akan diperbarui setelah penelitian lebih lanjut)
 
 ---
-
-## Assignment Submission
-
-1. Tambahkan URL dashboard di bagian paling atas `.ipynb` dan di README.md.
-
-2. Tidak adanya URL dashboard di file `.ipynb` akan menyebabkan tidak dinilainya Tableau.
-
-3. Push Assigment yang telah dibuat ke akun Github masing-masing student dan Github Classroom.
-
----
-
-## Assignment Rubrics
-
-<img src="https://github.com/fahmimnalfrzki/Dataset/raw/main/Screenshot%202022-12-16%20at%2016.28.37.png"></img>
-
----
-
-```
-Total Points : 60
-
-Catatan : Penilaian Milestone  juga dapat dipengaruhi oleh aktivitas student selama Phase 0 berlangsung, baik sesi kelas maupun sesi mentoring dengan buddy-nya masing-masing sehingga terdapat kemungkinan adanya penambahan atau pengurangan nilai diluar rubric yang telah disebutkan diatas.
-```
-
----
-
-## Notes
-
-* **Deadline : P0W4D3 pukul 23:59 WIB.**
-
-* **Keterlambatan pengumpulan tugas mengakibatkan skor Milestone 1 menjadi 0.**
+**Catatan:** Dokumentasi ini akan terus diperbarui seiring dengan perkembangan proyek.
